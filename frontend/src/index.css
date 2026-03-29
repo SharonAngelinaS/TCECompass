@@ -1,0 +1,5 @@
+/* Entry-level overrides — most globals live in App.css */
+
+body {
+  line-height: 1.5;
+}

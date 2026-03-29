@@ -1,0 +1,84 @@
+.welcome-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  background-image: url("/tce-page.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1.25rem;
+}
+
+.welcome-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Neutral darkening so the campus photo stays natural, not purple-tinted */
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.5) 100%
+  );
+  z-index: 0;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 42rem;
+}
+
+.welcome-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.welcome-subtitle {
+  margin: 0 0 2rem;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  opacity: 0.95;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.get-started-button {
+  padding: 0.95rem 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+  border: none;
+  border-radius: var(--tc-radius-pill);
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.get-started-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+.get-started-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .welcome-page {
+    padding: 1rem 0.5rem;
+  }
+  .welcome-title {
+    font-size: 2.2rem;
+  }
+  .welcome-subtitle {
+    margin: 0 0 1.5rem;
+  }
+}

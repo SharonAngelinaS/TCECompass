@@ -1,0 +1,52 @@
+/* TCE Compass — global design tokens & base */
+
+:root {
+  --tc-primary: #5b6cff;
+  --tc-primary-mid: #6d5efc;
+  --tc-accent: #7b2ff7;
+  --tc-accent-soft: #a855f7;
+  --tc-bg: #fafaf9;
+  --tc-bg-elevated: #f8f9fc;
+  --tc-surface: #ffffff;
+  --tc-text: #0f172a;
+  --tc-text-muted: #64748b;
+  --tc-border: rgba(91, 108, 255, 0.12);
+  --tc-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --tc-shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+  --tc-radius: 16px;
+  --tc-radius-pill: 999px;
+  --tc-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --tc-gradient: linear-gradient(135deg, var(--tc-primary) 0%, var(--tc-accent) 100%);
+  --tc-gradient-hover: linear-gradient(135deg, #4f5fef 0%, #6d28d9 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--tc-font);
+  color: var(--tc-text);
+  background: var(--tc-bg);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--tc-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

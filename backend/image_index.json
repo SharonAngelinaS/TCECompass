@@ -1,0 +1,215 @@
+{
+  "items": [
+    {
+      "label": "it_block/floor_0",
+      "phash": "99d3269d1e323365",
+      "path": "it_block/floor 0/20251229_142141.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "adae5a5756c53130",
+      "path": "it_block/floor 0/20251229_142217.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "803c939197bdc795",
+      "path": "it_block/floor 0/20251229_142302.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "f48b74c0c15c3e8f",
+      "path": "it_block/floor 0/20251229_142324.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "faaca537b58c084b",
+      "path": "it_block/floor 0/20251229_142418.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "e8c407b83f18ce7a",
+      "path": "it_block/floor 0/Cloud systems lab.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "af39d12ed8329ce0",
+      "path": "it_block/floor 0/Data Science laboratory.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "d09e8e3593d14d56",
+      "path": "it_block/floor 0/Department of AMCS.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "eff01996366c6849",
+      "path": "it_block/floor 0/Department of Computer Applications.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "b82dc73cc61ce38a",
+      "path": "it_block/floor 0/IG4.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "999e723063273679",
+      "path": "it_block/floor 0/IG5.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "a9d6d697b0863919",
+      "path": "it_block/floor 0/IG6 and IG7.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "eb909f90646d3993",
+      "path": "it_block/floor 0/MCA staff room.heic"
+    },
+    {
+      "label": "it_block/floor_0",
+      "phash": "afadda3a37c1c0c0",
+      "path": "it_block/floor 0/Smart Secure and Enviraontment lab.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "9e36c3942ad29eaa",
+      "path": "it_block/floor 1/20251229_141723.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "b78546a525aa9a3b",
+      "path": "it_block/floor 1/20251229_141748.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "9c53a3c167b9643a",
+      "path": "it_block/floor 1/20251229_141826.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "fdf92d3fc2c1200c",
+      "path": "it_block/floor 1/20251229_141840.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "996dd6942b4bc694",
+      "path": "it_block/floor 1/20251229_142234.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "97ca928a7792f05c",
+      "path": "it_block/floor 1/Cyberforensic lab and honeywell IOT lab.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "a1861a6d66d96eb2",
+      "path": "it_block/floor 1/IF1.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "9473c671e31cf30c",
+      "path": "it_block/floor 1/IF2.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "d5f2d28f9a1a1692",
+      "path": "it_block/floor 1/IF4.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "eff1d29998838d03",
+      "path": "it_block/floor 1/Machine learning lab.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "9f2fc0b469b48596",
+      "path": "it_block/floor 1/Seminar Hall.heic"
+    },
+    {
+      "label": "it_block/floor_1",
+      "phash": "ec099b99c35b60f2",
+      "path": "it_block/floor 1/Tutorial hall 1.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "aa6ac963b5c334c3",
+      "path": "it_block/floor 2/20251229_141520.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "c2d289c33f0d1b3e",
+      "path": "it_block/floor 2/20251229_141544.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "d3c11c3c9ce3c33c",
+      "path": "it_block/floor 2/20251229_142357.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "c03b9d3619954eb5",
+      "path": "it_block/floor 2/Business Analytics lab.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "8da2b1c952e69d36",
+      "path": "it_block/floor 2/IMG-20260120-WA0007.jpg"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "a761c1e031cff11b",
+      "path": "it_block/floor 2/IMG-20260120-WA0008.jpg"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "ce66a5f1bd09142b",
+      "path": "it_block/floor 2/IS2.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "d83eae334719b621",
+      "path": "it_block/floor 2/IS4.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "bde0491e1f0f9349",
+      "path": "it_block/floor 2/IS5.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "d3e8ac09d4fc8e0e",
+      "path": "it_block/floor 2/IT office.heic"
+    },
+    {
+      "label": "it_block/floor_2",
+      "phash": "9f138497cb855bc8",
+      "path": "it_block/floor 2/Moblie Application development studio.heic"
+    },
+    {
+      "label": "it_block/floor_3",
+      "phash": "e419c12e9b669e63",
+      "path": "it_block/floor 3/Agile software lab.heic"
+    },
+    {
+      "label": "it_block/floor_3",
+      "phash": "952b7897329a1b8d",
+      "path": "it_block/floor 3/Block Chain lab.heic"
+    },
+    {
+      "label": "it_block/floor_3",
+      "phash": "f98693b5a52c14ad",
+      "path": "it_block/floor 3/CSBS staff room and ITT3.heic"
+    },
+    {
+      "label": "it_block/floor_3",
+      "phash": "839ccd66e6cd6c30",
+      "path": "it_block/floor 3/Integrated business analytics lab.heic"
+    },
+    {
+      "label": "it_block/floor_3",
+      "phash": "89a4c6a6f78333a3",
+      "path": "it_block/floor 3/ITT1 and ITT2.heic"
+    }
+  ],
+  "dataset_dir": "C:/Users/ashwi/Downloads/tce-compass/data/image_training"
+}

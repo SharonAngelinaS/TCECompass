@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: tce-compass-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LLM_API_URL
+        value: https://tce-compass-llm.onrender.com/api/chat
+    healthCheckPath: /health
+
+  - type: web
+    name: tce-compass-llm
+    env: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --log-file -
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false

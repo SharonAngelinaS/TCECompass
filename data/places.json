@@ -1,0 +1,32 @@
+[
+  {"id":"FRONT_GATE","name":"TCE Front Gate","lat":9.885552,"lng":78.079421},
+  {"id":"GUEST_HOUSE","name":"Guest House","lat":9.885235,"lng":78.080810},
+  {"id":"BOYS_HOSTEL","name":"Boys Hostel","lat":9.885547,"lng":78.079716},
+  {"id":"MAIN_CANTEEN","name":"Main Canteen","lat":9.883120,"lng":78.080038},
+  {"id":"SECURITY_OFFICE","name":"Security Office","lat":9.883559,"lng":78.080735},
+  {"id":"TSS_CAR","name":"TSS Car Parking","lat":9.882591,"lng":78.080692},
+  {"id":"PARKING","name":"Parking","lat":9.882956,"lng":78.080735},
+
+  {"id":"LIBRARY","name":"Library","lat":9.883152,"lng":78.081352},
+  {"id":"M_HALLS","name":"M Halls","lat":9.882591,"lng":78.081041},
+  {"id":"MECHANICAL_DEPT","name":"Mechanical Department","lat":9.882337,"lng":78.081137},
+
+  {"id":"KS_AUDITORIUM","name":"KS Auditorium","lat":9.882813,"lng":78.082097},
+  {"id":"OPEN_AUDITORIUM","name":"Open Auditorium","lat":9.882596,"lng":78.081947},
+  {"id":"KK_AUDITORIUM","name":"KK Auditorium","lat":9.882311,"lng":78.082542},
+
+  {"id":"MAIN_BUILDING","name":"Main Building","lat":9.882676,"lng":78.082531},
+  {"id":"ECE_DEPT","name":"ECE Department","lat":9.882845,"lng":78.082912},
+  {"id":"CIVIL_DEPT","name":"Civil Department","lat":9.882258,"lng":78.082880},
+  {"id":"MECHATRONICS_DEPT","name":"Mechatronics Department","lat":9.881798,"lng":78.082955},
+  {"id":"B_HALLS","name":"B Halls","lat":9.881882,"lng":78.082773},
+
+  {"id":"CSC_DEPT","name":"CSC Department","lat":9.882845,"lng":78.083786},
+  {"id":"FOOD_COURT","name":"Food Court","lat":9.883141,"lng":78.083213},
+  {"id":"IT_DEPT","name":"IT Department","lat":9.882422,"lng":78.083572},
+  {"id":"CSBS_DEPT","name":"CSBS Department","lat":9.882231,"lng":78.083572},
+  {"id":"LADIES_ROOM","name":"Ladies Room","lat":9.881978,"lng":78.083593},
+
+  {"id":"BACK_GATE","name":"TCE Back Gate","lat":9.881512,"lng":78.083534},
+  {"id":"EEE_DEPT","name":"EEE Department","lat": 9.882501, "lng":78.081786}
+]
