@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "../styles/Chatbot.css";
 
-const API_URL = "http://127.0.0.1:3001";
-const IMAGE_API = "http://127.0.0.1:5000";
+const hostname = window.location.hostname;
+const API_URL = import.meta.env.VITE_API_URL || `http://${hostname}:3001`;
+const IMAGE_API = import.meta.env.VITE_IMAGE_API_URL || `http://${hostname}:5000`;
 
 function formatImageLocationReply(data) {
   const raw = (data.message || "").trim();
