@@ -3,8 +3,9 @@ services:
     name: tce-compass-backend
     env: node
     plan: free
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && node server.js
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
@@ -16,8 +17,9 @@ services:
     name: tce-compass-llm
     env: python
     plan: free
-    buildCommand: cd backend && pip install -r requirements.txt
-    startCommand: cd backend && gunicorn app:app --log-file -
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --log-file -
     envVars:
       - key: GEMINI_API_KEY
         sync: false
