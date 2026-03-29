@@ -1,7 +1,7 @@
 import os
 from PIL import Image, ImageDraw
 
-input_path = r"e:\CHANGED DOWNLOAD FOLDER\TCE-Compass-Integrated\TCE-Compass-Integrated\frontend\public\logo.jpg"
+input_path = r"e:\CHANGED DOWNLOAD FOLDER\TCE-Compass-Integrated\TCE-Compass-Integrated\frontend\public\logo.png"
 output_path = r"e:\CHANGED DOWNLOAD FOLDER\TCE-Compass-Integrated\TCE-Compass-Integrated\frontend\public\logo.png"
 
 try:
