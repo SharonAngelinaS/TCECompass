@@ -16,7 +16,7 @@ services:
     name: tce-compass-llm
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r backend/requirements.txt
     startCommand: gunicorn --chdir backend app:app --log-file -
     envVars:
       - key: GEMINI_API_KEY

@@ -2,6 +2,7 @@ flask==3.0.0
 flask-cors==4.0.0
 pandas==2.1.3
 openai==1.3.5
+google-generativeai==0.3.2
 python-dotenv==1.0.0
 Pillow==10.1.0
 ImageHash==4.3.1
