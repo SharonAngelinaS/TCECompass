@@ -9,41 +9,31 @@ class DataProcessor:
         backend_dir = os.path.dirname(os.path.abspath(__file__))
         project_root = os.path.dirname(backend_dir)
         self.base_path = os.path.join(project_root, 'data')
-        self.classrooms = None
-        self.labs = None
-        self.staffrooms = None
+        self.classrooms = pd.DataFrame()
+        self.labs = pd.DataFrame()
+        self.staffrooms = pd.DataFrame()
         self.load_all_datasets()
     
     def load_all_datasets(self):
-        """Load all CSV datasets"""
+        """Load the consolidated master CSV dataset"""
         try:
-            # Load classrooms
-            classroom_path = os.path.join(self.base_path, 'it-classroom - Sheet1.csv')
-            if os.path.exists(classroom_path):
-                self.classrooms = pd.read_csv(classroom_path)
+            # Use the consolidated file for labs, classrooms, and staffrooms
+            master_path = os.path.join(self.base_path, 'dataset_tce.csv')
+            
+            if os.path.exists(master_path):
+                # Load the single master file into a DataFrame
+                df = pd.read_csv(master_path)
                 # Clean column names - remove leading/trailing spaces
-                self.classrooms.columns = self.classrooms.columns.str.strip()
-                print(f"Loaded classrooms: {len(self.classrooms)} rows, columns: {list(self.classrooms.columns)}")
+                df.columns = df.columns.str.strip()
+                
+                # Assign to all three so the existing search functions work
+                self.classrooms = df
+                self.labs = df
+                self.staffrooms = df
+                
+                print(f"Loaded master dataset: {len(df)} rows, columns: {list(df.columns)}")
             else:
-                print(f"Warning: Classroom file not found at {classroom_path}")
-            
-            # Load labs
-            lab_path = os.path.join(self.base_path, 'it-lab - Sheet1.csv')
-            if os.path.exists(lab_path):
-                self.labs = pd.read_csv(lab_path)
-                self.labs.columns = self.labs.columns.str.strip()
-                print(f"Loaded labs: {len(self.labs)} rows, columns: {list(self.labs.columns)}")
-            else:
-                print(f"Warning: Lab file not found at {lab_path}")
-            
-            # Load staffrooms
-            staffroom_path = os.path.join(self.base_path, 'it-staffroom - Sheet1.csv')
-            if os.path.exists(staffroom_path):
-                self.staffrooms = pd.read_csv(staffroom_path)
-                self.staffrooms.columns = self.staffrooms.columns.str.strip()
-                print(f"Loaded staffrooms: {len(self.staffrooms)} rows, columns: {list(self.staffrooms.columns)}")
-            else:
-                print(f"Warning: Staffroom file not found at {staffroom_path}")
+                print(f"Warning: Master dataset file not found at {master_path}")
         except Exception as e:
             print(f"Error loading datasets: {e}")
             import traceback
@@ -51,7 +41,7 @@ class DataProcessor:
     
     def search_classrooms(self, query: str) -> List[Dict[str, Any]]:
         """Search for classrooms matching the query"""
-        if self.classrooms is None:
+        if self.classrooms.empty:
             return []
         
         results = []
@@ -103,7 +93,7 @@ class DataProcessor:
     
     def search_labs(self, query: str) -> List[Dict[str, Any]]:
         """Search for labs matching the query"""
-        if self.labs is None:
+        if self.labs.empty:
             return []
         
         results = []
@@ -320,7 +310,7 @@ class DataProcessor:
     
     def search_staffrooms(self, query: str) -> List[Dict[str, Any]]:
         """Search for staffrooms matching the query"""
-        if self.staffrooms is None:
+        if self.staffrooms.empty:
             return []
         
         results = []
