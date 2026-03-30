@@ -58,10 +58,31 @@ function buildRouteFromPoints(fromPoint, toPlace, fromLabel) {
   };
 }
 
+// Map marker + popup images for known `places.json` entries.
+// These files are served from `frontend/public/images/navigation/`.
 const LIBRARY_IMG = "/images/navigation/library.png";
 const MAIN_BUILDING_IMG = "/images/navigation/main-building.png";
 const FOOD_COURT_IMG = "/images/navigation/food-court.png";
 const IT_DEPARTMENT_IMG = "/images/navigation/it-department.png";
+
+const TCE_FRONT_GATE_IMG = "/images/navigation/tce-front-gate.png";
+const TCE_BACK_GATE_IMG = "/images/navigation/tce-back-gate.png";
+const GUEST_HOUSE_IMG = "/images/navigation/guest-house.png";
+const BOYS_HOSTEL_IMG = "/images/navigation/boys-hostel.png";
+const MAIN_CANTEEN_IMG = "/images/navigation/main-canteen.png";
+const SECURITY_OFFICE_IMG = "/images/navigation/security-office.png";
+const TSS_CAR_PARKING_IMG = "/images/navigation/tss-car-parking.png";
+const PARKING_IMG = "/images/navigation/parking.png";
+const MECHANICAL_DEPT_IMG = "/images/navigation/mechanical-department.png";
+const EEE_DEPT_IMG = "/images/navigation/eee-department.png";
+const ECE_DEPT_IMG = "/images/navigation/ece-department.png";
+const CSC_DEPT_IMG = "/images/navigation/csc-department.png";
+const MECHATRONICS_DEPT_IMG = "/images/navigation/mechatronics-department.png";
+const LADIES_ROOM_IMG = "/images/navigation/ladies-room.png";
+const B_HALLS_IMG = "/images/navigation/b-halls.png";
+const KS_AUDITORIUM_IMG = "/images/navigation/ks-auditorium.png";
+const OPEN_AUDITORIUM_IMG = "/images/navigation/open-auditorium.png";
+const KK_AUDITORIUM_IMG = "/images/navigation/kk-auditorium.png";
 
 const defaultPinIcon = new L.Icon({
   iconUrl,
@@ -98,6 +119,24 @@ function iconForPlaceName(placeName) {
   if (placeName === "Main Building") return photoMarkerIcon(MAIN_BUILDING_IMG);
   if (placeName === "Food Court") return photoMarkerIcon(FOOD_COURT_IMG);
   if (placeName === "IT Department") return photoMarkerIcon(IT_DEPARTMENT_IMG);
+  if (placeName === "TCE Front Gate") return photoMarkerIcon(TCE_FRONT_GATE_IMG);
+  if (placeName === "TCE Back Gate") return photoMarkerIcon(TCE_BACK_GATE_IMG);
+  if (placeName === "Guest House") return photoMarkerIcon(GUEST_HOUSE_IMG);
+  if (placeName === "Boys Hostel") return photoMarkerIcon(BOYS_HOSTEL_IMG);
+  if (placeName === "Main Canteen") return photoMarkerIcon(MAIN_CANTEEN_IMG);
+  if (placeName === "Security Office") return photoMarkerIcon(SECURITY_OFFICE_IMG);
+  if (placeName === "TSS Car Parking") return photoMarkerIcon(TSS_CAR_PARKING_IMG);
+  if (placeName === "Parking") return photoMarkerIcon(PARKING_IMG);
+  if (placeName === "Mechanical Department") return photoMarkerIcon(MECHANICAL_DEPT_IMG);
+  if (placeName === "EEE Department") return photoMarkerIcon(EEE_DEPT_IMG);
+  if (placeName === "ECE Department") return photoMarkerIcon(ECE_DEPT_IMG);
+  if (placeName === "CSC Department") return photoMarkerIcon(CSC_DEPT_IMG);
+  if (placeName === "Mechatronics Department") return photoMarkerIcon(MECHATRONICS_DEPT_IMG);
+  if (placeName === "Ladies Room") return photoMarkerIcon(LADIES_ROOM_IMG);
+  if (placeName === "B Halls") return photoMarkerIcon(B_HALLS_IMG);
+  if (placeName === "KS Auditorium") return photoMarkerIcon(KS_AUDITORIUM_IMG);
+  if (placeName === "Open Auditorium") return photoMarkerIcon(OPEN_AUDITORIUM_IMG);
+  if (placeName === "KK Auditorium") return photoMarkerIcon(KK_AUDITORIUM_IMG);
   return defaultPinIcon;
 }
 
@@ -106,6 +145,24 @@ function popupImageForPlace(placeName) {
   if (placeName === "Main Building") return MAIN_BUILDING_IMG;
   if (placeName === "Food Court") return FOOD_COURT_IMG;
   if (placeName === "IT Department") return IT_DEPARTMENT_IMG;
+  if (placeName === "TCE Front Gate") return TCE_FRONT_GATE_IMG;
+  if (placeName === "TCE Back Gate") return TCE_BACK_GATE_IMG;
+  if (placeName === "Guest House") return GUEST_HOUSE_IMG;
+  if (placeName === "Boys Hostel") return BOYS_HOSTEL_IMG;
+  if (placeName === "Main Canteen") return MAIN_CANTEEN_IMG;
+  if (placeName === "Security Office") return SECURITY_OFFICE_IMG;
+  if (placeName === "TSS Car Parking") return TSS_CAR_PARKING_IMG;
+  if (placeName === "Parking") return PARKING_IMG;
+  if (placeName === "Mechanical Department") return MECHANICAL_DEPT_IMG;
+  if (placeName === "EEE Department") return EEE_DEPT_IMG;
+  if (placeName === "ECE Department") return ECE_DEPT_IMG;
+  if (placeName === "CSC Department") return CSC_DEPT_IMG;
+  if (placeName === "Mechatronics Department") return MECHATRONICS_DEPT_IMG;
+  if (placeName === "Ladies Room") return LADIES_ROOM_IMG;
+  if (placeName === "B Halls") return B_HALLS_IMG;
+  if (placeName === "KS Auditorium") return KS_AUDITORIUM_IMG;
+  if (placeName === "Open Auditorium") return OPEN_AUDITORIUM_IMG;
+  if (placeName === "KK Auditorium") return KK_AUDITORIUM_IMG;
   return null;
 }
 
