@@ -117,7 +117,7 @@ class DataProcessor:
         
         faculty_col = None
         for col in self.labs.columns:
-            if 'faculty' in col.lower() and 'name' in col.lower():
+            if 'faculty' in col.lower():
                 faculty_col = col
                 break
         
@@ -231,9 +231,12 @@ class DataProcessor:
                 faculty_mask = self.labs[faculty_col].astype(str).str.lower().str.contains(query_lower, na=False, regex=False)
                 mask = mask | faculty_mask
                 
+                # Words to ignore during faculty search (titles)
+                ignore_words = {'mam', 'sir', 'professor', 'prof', 'dr', 'mrs', 'ms', 'mr', 'the', 'find', 'where', 'is'}
+                
                 # Word-by-word and spelling variations in faculty names
                 for word in query_words:
-                    if len(word) > 2:
+                    if len(word) > 2 and word not in ignore_words:
                         try:
                             word_mask = self.labs[faculty_col].astype(str).str.lower().str.contains(r'\b' + re.escape(word) + r'\b', na=False, regex=True)
                             mask = mask | word_mask
@@ -300,7 +303,7 @@ class DataProcessor:
             results.append({
                 'type': 'lab',
                 'name': str(row[lab_col]).strip(),
-                'faculty': str(row.get('Faculty Name', 'N/A')).strip() if pd.notna(row.get('Faculty Name', 'N/A')) else 'N/A',
+                'faculty': str(row.get(faculty_col, 'N/A')).strip() if faculty_col and pd.notna(row.get(faculty_col, 'N/A')) else 'N/A',
                 'department': str(row.get('Department Name', 'N/A')).strip() if pd.notna(row.get('Department Name', 'N/A')) else 'N/A',
                 'block': str(row.get('Block Name', 'N/A')).strip() if pd.notna(row.get('Block Name', 'N/A')) else 'N/A',
                 'floor': self._get_floor_display(row.get('Floor Number', 'N/A'))
@@ -330,7 +333,7 @@ class DataProcessor:
         
         faculty_col = None
         for col in self.staffrooms.columns:
-            if 'faculty' in col.lower() and 'name' in col.lower():
+            if 'faculty' in col.lower():
                 faculty_col = col
                 break
         
@@ -356,11 +359,14 @@ class DataProcessor:
             faculty_mask = self.staffrooms[faculty_col].astype(str).str.lower().str.contains(query_lower, na=False, regex=False)
             mask = mask | faculty_mask
             
+            # Words to ignore during faculty search (titles)
+            ignore_words = {'mam', 'sir', 'professor', 'prof', 'dr', 'mrs', 'ms', 'mr', 'the', 'find', 'where', 'is'}
+            
             # Also try word-by-word matching with word boundaries
             for word in query_words:
-                if len(word) > 2:
+                if len(word) > 2 and word not in ignore_words:
                     # Use word boundaries for better matching
-                    word_mask = self.staffrooms[faculty_col].astype(str).str.lower().str.contains(r'\b' + word + r'\b', na=False, regex=True)
+                    word_mask = self.staffrooms[faculty_col].astype(str).str.lower().str.contains(r'\b' + re.escape(word) + r'\b', na=False, regex=True)
                     mask = mask | word_mask
             
             # Also try fuzzy matching for common misspellings and voice-to-text (key=user input, value=terms to search in DB)
@@ -410,7 +416,7 @@ class DataProcessor:
             results.append({
                 'type': 'staffroom',
                 'name': str(row[staffroom_col]).strip(),
-                'faculty': str(row.get('Faculty Name', 'N/A')).strip() if pd.notna(row.get('Faculty Name', 'N/A')) else 'N/A',
+                'faculty': str(row.get(faculty_col, 'N/A')).strip() if faculty_col and pd.notna(row.get(faculty_col, 'N/A')) else 'N/A',
                 'department': str(row.get('Department Name', 'N/A')).strip() if pd.notna(row.get('Department Name', 'N/A')) else 'N/A',
                 'block': str(row.get('Block Name', 'N/A')).strip() if pd.notna(row.get('Block Name', 'N/A')) else 'N/A',
                 'floor': self._get_floor_display(row.get('Floor Number', 'N/A'))
@@ -439,9 +445,19 @@ class DataProcessor:
     
     def get_relevant_context(self, query: str) -> Dict[str, Any]:
         """Get relevant context from all datasets based on the query"""
-        # Normalize: strip punctuation so "sse lab?" / "lab?" doesn't match all labs (regex "lab?" would match "lab")
-        query = ' '.join(re.sub(r'[?\.,!;:\'"]+', ' ', query.lower().strip()).split())
-        query_lower = query
+        # Normalize and strip titles from the query itself for better matching
+        query = re.sub(r'[?\.,!;:\'"]+', ' ', query.lower().strip())
+        titles_to_strip = ['mam', 'sir', 'professor', 'prof', 'dr', 'mrs', 'ms', 'mr']
+        query_words = query.split()
+        # Strip titles if they appear at the end or beginning
+        if query_words and query_words[-1] in titles_to_strip:
+            query = ' '.join(query_words[:-1])
+        elif query_words and query_words[0] in titles_to_strip:
+            query = ' '.join(query_words[1:])
+        else:
+            query = ' '.join(query_words)
+            
+        query_lower = query.strip()
         context_parts = []
         all_results = []
         
@@ -491,6 +507,16 @@ class DataProcessor:
                         f"- {result['name']} is located in {result['block']}, {result['floor']}. "
                         f"Department: {result['department']}.{faculty_info}"
                     )
+        
+        # De-duplicate all_results based on name and block to avoid duplicates when master dataset is shared
+        unique_results = []
+        seen_keys = set()
+        for res in all_results:
+            key = (res['name'].lower(), res['block'].lower(), res['floor'].lower())
+            if key not in seen_keys:
+                unique_results.append(res)
+                seen_keys.add(key)
+        all_results = unique_results
         
         # Check if multiple results have the same faculty name (for clarification)
         needs_clarification = False
